@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
-import heroImage from "@/assets/hero-lake.jpg";
+import profilePhoto from "@/assets/profile-photo.png.asset.json";
 import { RESUME_URL } from "@/lib/links";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,14 +23,25 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <section className="hero-gradient">
-      <div className="mx-auto grid max-w-5xl items-center gap-10 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24">
+    <section className="flex min-h-[calc(100vh-57px)] items-center md:min-h-screen">
+      <div className="mx-auto grid w-full max-w-5xl items-center gap-10 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
+        <div className="relative mx-auto w-full max-w-xs md:mx-0">
+          <img
+            src={profilePhoto.url}
+            alt="Portrait of Davin Kyi"
+            width={900}
+            height={900}
+            className="blob aspect-square w-full object-cover shadow-lift"
+            style={{ objectPosition: "38% 28%" }}
+          />
+        </div>
+
         <div>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <GraduationCap className="h-3.5 w-3.5 text-primary" />
             University of Washington · CSE
           </p>
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Davin Kyi
           </h1>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">
@@ -82,17 +94,6 @@ function Index() {
               <Github className="h-4 w-4" /> GitHub
             </a>
           </div>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -inset-3 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
-          <img
-            src={heroImage}
-            alt="Davin Kyi standing on a rock by an alpine lake"
-            width={900}
-            height={1200}
-            className="aspect-[3/4] w-full rounded-2xl object-cover shadow-lift"
-          />
         </div>
       </div>
     </section>
