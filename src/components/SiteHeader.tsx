@@ -41,23 +41,23 @@ export function SiteHeader() {
         <div>
           <Link
             to="/"
-            className="font-serif text-2xl font-bold tracking-tight text-foreground"
+            className="font-serif text-2xl font-bold leading-tight tracking-tight text-foreground"
           >
-            Davin
+            Davin Win Kyi
           </Link>
           <div className="mt-12">
             <NavLinks />
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Davin Kyi
+          © {new Date().getFullYear()} Davin Win Kyi
         </p>
       </aside>
 
       {/* Mobile top bar */}
       <header className="sticky top-0 z-50 flex items-center justify-between border-b border-border/60 bg-background/80 px-5 py-4 backdrop-blur-md md:hidden">
         <Link to="/" className="font-serif text-lg font-bold tracking-tight text-foreground">
-          Davin
+          Davin Win Kyi
         </Link>
         <button
           className="inline-flex items-center justify-center rounded-md p-2 text-foreground"

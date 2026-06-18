@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import lifting from "@/assets/lifting.jpg";
-import boxing from "@/assets/boxing.jpg";
+import lifting from "@/assets/lifting-gym.png.asset.json";
+import boxing from "@/assets/boxing-gloves.png.asset.json";
 import snowboarding from "@/assets/snowboarding.png";
 import running from "@/assets/running.png";
 
@@ -24,12 +24,12 @@ export const Route = createFileRoute("/hobbies")({
 const hobbies = [
   {
     name: "Lifting",
-    image: lifting,
+    image: lifting.url,
     blurb: "Chasing progressive overload and steady strength gains in the gym.",
   },
   {
     name: "Boxing",
-    image: boxing,
+    image: boxing.url,
     blurb: "Footwork, conditioning, and the focus that comes with sparring.",
   },
   {
