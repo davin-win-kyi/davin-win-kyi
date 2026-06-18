@@ -155,3 +155,8 @@
     background-image: var(--gradient-hero);
   }
 }
+
+@utility blob {
+  border-radius: 49% 51% 62% 38% / 42% 44% 56% 58%;
+}
+
