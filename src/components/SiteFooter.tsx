@@ -2,7 +2,7 @@ import { SOCIAL_LINKS } from "@/lib/links";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/60">
+    <footer className="border-t border-border/60 md:hidden">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} Davin Win Kyi
