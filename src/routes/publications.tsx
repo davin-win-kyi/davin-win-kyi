@@ -47,9 +47,9 @@ const publications: Publication[] = [
       { name: "Dhruv Jain" },
       { name: "Jon E. Froehlich" },
     ],
-    note: "* Denotes equal contribution (co-first authors).",
+    note: "* Equal contribution (co-first authors).",
     blurb:
-      "A system supporting personalized authoring of sound-reactive AR interfaces, enabling Deaf and hard of hearing users to design how everyday sounds are visualized in augmented reality.",
+      "A system letting Deaf and hard of hearing users personalize how everyday sounds are visualized in augmented reality.",
     links: [
       {
         label: "Scholar",
