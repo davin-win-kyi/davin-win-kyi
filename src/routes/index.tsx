@@ -33,7 +33,7 @@ function Index() {
             width={900}
             height={900}
             className="blob blob-animated aspect-square w-full object-cover shadow-lift"
-            style={{ objectPosition: "50% 22%" }}
+            style={{ objectPosition: "50% 30%" }}
           />
         </div>
 
