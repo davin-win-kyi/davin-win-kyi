@@ -112,22 +112,26 @@ const experience: TimelineItem[] = [
     logo: capitalOneLogo.url,
   },
   {
-    period: "2022 – 2023",
+    period: "Jan 2023 – Mar 2023",
     title: "Ansys",
     subtitle: "Software Engineer Intern",
-    location: "Remote",
+    location: "Canonsburg, PA · Remote",
     points: [
-      "Built and tested software features for Ansys engineering simulation products.",
+      "Crafted and engineered 25+ batch files, optimizing daily installations for 20+ software engineers and cutting runtime by 20%.",
+      "Collaborated with 3 developers to boost the Discovery product's test coverage by writing 50+ C# tests, reducing bugs by 15%.",
+      "Resolved 100+ critical C# test failures in the Discovery product, reducing bugs by a further 10%.",
     ],
     logo: ansysLogo.url,
   },
   {
-    period: "2021 – 2022",
+    period: "Jun 2022 – Aug 2022",
     title: "PennyMac",
     subtitle: "Software Engineer Intern",
-    location: "Remote",
+    location: "Agoura Hills, CA",
     points: [
-      "Developed and maintained backend services and tooling for mortgage and lending platforms.",
+      "Created customer campaigns with Salesforce and CSS/HTML/JS to convert thousands of potential leads.",
+      "Partnered with the product team to boost lead acquisition by 20% via automated Salesforce Marketing Cloud features.",
+      "Programmed a secure login system letting hundreds of PennyMac employees safely retrieve data using AMPScript, HTML, CSS, and JavaScript.",
     ],
     logo: pennymacLogo.url,
   },
@@ -232,9 +236,10 @@ export default function About() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">About</h1>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            I'm a computer scientist focused on augmented reality, accessibility,
-            and machine learning. I enjoy building systems that make everyday
-            digital and physical experiences more usable for everyone.
+            I'm a computer scientist applying machine learning and artificial
+            intelligence in the space of augmented reality, accessibility, and
+            human-computer interaction. I enjoy building systems that make
+            everyday digital and physical experiences more usable for everyone.
           </p>
 
           <section className="mt-12">
