@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { FileText } from "lucide-react";
+import { FileText, GraduationCap, Briefcase } from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import { RESUME_URL } from "@/lib/links";
 
@@ -112,7 +112,7 @@ function Timeline({ items }: { items: TimelineItem[] }) {
               className="absolute -left-[29px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-background bg-primary ring-1 ring-border"
               aria-hidden
             />
-            <p className="font-serif text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               {item.period}
             </p>
             <div className="mt-2 rounded-xl border border-border bg-card p-6 shadow-soft">
@@ -155,7 +155,7 @@ export default function About() {
               height={600}
               loading="lazy"
               className="blob blob-animated aspect-square w-full object-cover shadow-lift"
-              style={{ objectPosition: "50% 20%" }}
+              style={{ objectPosition: "50% 12%" }}
             />
           </div>
           <a
@@ -178,12 +178,22 @@ export default function About() {
           </p>
 
           <section className="mt-12">
-            <h2 className="text-xl font-semibold tracking-tight text-foreground">Education</h2>
+            <h2 className="flex items-center gap-2.5 text-xl font-semibold tracking-tight text-foreground">
+              <span className="flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-secondary text-foreground">
+                <GraduationCap className="h-4 w-4" aria-hidden />
+              </span>
+              Education
+            </h2>
             <Timeline items={education} />
           </section>
 
           <section className="mt-12">
-            <h2 className="text-xl font-semibold tracking-tight text-foreground">Experience</h2>
+            <h2 className="flex items-center gap-2.5 text-xl font-semibold tracking-tight text-foreground">
+              <span className="flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-secondary text-foreground">
+                <Briefcase className="h-4 w-4" aria-hidden />
+              </span>
+              Experience
+            </h2>
             <Timeline items={experience} />
           </section>
         </div>

@@ -72,82 +72,94 @@ function Contact() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-5 py-16 md:py-20">
-      <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+    <div className="mx-auto max-w-3xl px-5 py-16 md:py-20">
+      <p className="inline-block rounded-md bg-secondary px-3 py-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
         Contact
-      </h1>
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        I'm always happy to talk about research, collaborations, or new
-        opportunities. Send me a message below or reach out through any channel.
       </p>
+      <h1 className="mt-5 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+        Get in Touch
+      </h1>
 
-      <div className="mt-10 grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-2xl border border-border bg-card p-6 shadow-soft sm:p-8"
-          noValidate
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="mt-12 space-y-5" noValidate>
+        <div>
+          <label htmlFor="name" className="sr-only">
+            Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={form.name}
+            onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+            className="w-full rounded-lg border border-input bg-background px-5 py-4 text-base text-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring"
+            placeholder="Name"
+            aria-invalid={!!errors.name}
+            aria-describedby={errors.name ? "name-error" : undefined}
+          />
+          {errors.name && (
+            <p id="name-error" className="mt-1.5 text-sm text-destructive">
+              {errors.name}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            value={form.email}
+            onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+            className="w-full rounded-lg border border-input bg-background px-5 py-4 text-base text-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring"
+            placeholder="Email"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "email-error" : undefined}
+          />
+          {errors.email && (
+            <p id="email-error" className="mt-1.5 text-sm text-destructive">
+              {errors.email}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="message" className="sr-only">
+            Message
+          </label>
+          <textarea
+            id="message"
+            rows={6}
+            value={form.message}
+            onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+            className="w-full resize-y rounded-lg border border-input bg-background px-5 py-4 text-base text-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring"
+            placeholder="Message"
+            aria-invalid={!!errors.message}
+            aria-describedby={errors.message ? "message-error" : undefined}
+          />
+          {errors.message && (
+            <p id="message-error" className="mt-1.5 text-sm text-destructive">
+              {errors.message}
+            </p>
+          )}
+        </div>
+
+        <button
+          type="submit"
+          className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          <div className="space-y-5">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground">
-                Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                value={form.name}
-                onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                placeholder="Your name"
-              />
-              {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
-            </div>
+          <Send className="h-4 w-4" aria-hidden />
+          Send Message
+        </button>
+      </form>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={form.email}
-                onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                className="mt-1.5 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                placeholder="you@example.com"
-              />
-              {errors.email && <p className="mt-1 text-xs text-destructive">{errors.email}</p>}
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                value={form.message}
-                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                className="mt-1.5 w-full resize-y rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring"
-                placeholder="What would you like to talk about?"
-              />
-              {errors.message && (
-                <p className="mt-1 text-xs text-destructive">{errors.message}</p>
-              )}
-            </div>
-
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
-            >
-              <Send className="h-4 w-4" />
-              Send message
-            </button>
-          </div>
-        </form>
-
-        {/* Channels */}
-        <div className="grid content-start gap-4">
+      {/* Contact info — fallback channels */}
+      <div className="mt-16 border-t border-border pt-10">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+          Or reach me directly
+        </h2>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {channels.map((c) => {
             const Icon = c.icon;
             return (
@@ -156,14 +168,14 @@ function Contact() {
                 href={c.href}
                 target={c.href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
+                className="group flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <span className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-secondary text-foreground">
-                  <Icon className="h-5 w-5" />
+                  <Icon className="h-5 w-5" aria-hidden />
                 </span>
-                <span>
+                <span className="min-w-0">
                   <span className="block text-sm font-semibold text-foreground">{c.label}</span>
-                  <span className="block text-sm text-muted-foreground">{c.value}</span>
+                  <span className="block truncate text-sm text-muted-foreground">{c.value}</span>
                 </span>
               </a>
             );

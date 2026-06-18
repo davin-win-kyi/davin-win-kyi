@@ -47,9 +47,9 @@ const publications: Publication[] = [
       { name: "Dhruv Jain" },
       { name: "Jon E. Froehlich" },
     ],
-    note: "* Denotes equal contribution (co-first authors).",
+    note: "* Equal contribution (co-first authors).",
     blurb:
-      "A system supporting personalized authoring of sound-reactive AR interfaces, enabling Deaf and hard of hearing users to design how everyday sounds are visualized in augmented reality.",
+      "A system letting Deaf and hard of hearing users personalize how everyday sounds are visualized in augmented reality.",
     links: [
       {
         label: "Scholar",
@@ -71,7 +71,7 @@ const publications: Publication[] = [
       { name: "Jacob O. Wobbrock" },
     ],
     blurb:
-      "TaskAudit introduces \"functiona11ity\" errors — accessibility barriers that only surface through interaction. Using a Task Generator, a Task Executor with a screen reader proxy, and an Accessibility Analyzer, it detected 48 functiona11ity errors across 54 real-world app screens, far more than existing checkers.",
+      "An agentic pipeline that uncovers \"functiona11ity\" errors — accessibility barriers that only surface through real interaction with mobile apps.",
     links: [
       {
         label: "arXiv",
@@ -95,22 +95,23 @@ function Publications() {
         Publications
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        Selected research projects spanning augmented reality and accessibility.
+        Research spanning augmented reality and accessibility.
       </p>
 
       <div className="mt-12 grid gap-10 md:grid-cols-2">
         {publications.map((p) => (
           <article key={p.title} className="flex flex-col">
-            <div className="aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary/40 p-4 shadow-soft">
               <img
                 src={p.image}
-                alt={p.title}
+                alt={`Figure from ${p.title}`}
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="h-full w-full object-cover"
+                className="max-h-full max-w-full rounded-lg object-contain"
               />
             </div>
+
 
             <p className="mt-6 text-sm font-medium text-muted-foreground">
               {p.venue}
