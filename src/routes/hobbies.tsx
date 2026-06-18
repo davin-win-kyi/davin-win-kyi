@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useRef } from "react";
 import lifting from "@/assets/lifting-gym.png";
 import boxing from "@/assets/boxing-gloves.png";
-import snowboarding from "@/assets/snowboarding.png";
-import running from "@/assets/running.png";
+import snowboardingVideo from "@/assets/snowboarding.mp4.asset.json";
+import snowboardingPoster from "@/assets/snowboarding-poster.jpg.asset.json";
+import runningVideo from "@/assets/running.mp4.asset.json";
+import runningPoster from "@/assets/running-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/hobbies")({
   head: () => ({
@@ -21,15 +24,26 @@ export const Route = createFileRoute("/hobbies")({
   component: Hobbies,
 });
 
-const hobbies = [
+type Hobby = {
+  name: string;
+  blurb: string;
+  image?: string;
+  video?: string;
+  poster?: string;
+  bw?: boolean;
+};
+
+const hobbies: Hobby[] = [
   {
     name: "Snowboarding",
-    image: snowboarding,
+    video: snowboardingVideo.url,
+    poster: snowboardingPoster.url,
     blurb: "Carving down the mountain whenever the season allows.",
   },
   {
     name: "Running",
-    image: running,
+    video: runningVideo.url,
+    poster: runningPoster.url,
     blurb: "Logging miles around the neighborhood to clear my head.",
   },
   {
@@ -44,6 +58,37 @@ const hobbies = [
     blurb: "Footwork, conditioning, and the focus that comes with sparring.",
   },
 ];
+
+function HobbyVideo({ name, video, poster }: { name: string; video: string; poster?: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  const play = () => {
+    ref.current?.play().catch(() => {});
+  };
+
+  const pauseReset = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.pause();
+  };
+
+  return (
+    <video
+      ref={ref}
+      src={video}
+      poster={poster}
+      controls
+      muted
+      loop
+      playsInline
+      preload="none"
+      onMouseEnter={play}
+      onMouseLeave={pauseReset}
+      aria-label={`${name} — video of one of Davin's hobbies. Hover or press play to watch.`}
+      className="h-full w-full object-cover"
+    />
+  );
+}
 
 function Hobbies() {
   return (
@@ -61,17 +106,21 @@ function Hobbies() {
             key={h.name}
             className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-shadow hover:shadow-lift"
           >
-            <div className="aspect-[4/3] overflow-hidden">
-              <img
-                src={h.image}
-                alt={`${h.name} — one of Davin's hobbies`}
-                loading="lazy"
-                width={1024}
-                height={768}
-                className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105${
-                  h.bw ? " grayscale" : ""
-                }`}
-              />
+            <div className="aspect-[4/3] overflow-hidden bg-muted">
+              {h.video ? (
+                <HobbyVideo name={h.name} video={h.video} poster={h.poster} />
+              ) : (
+                <img
+                  src={h.image}
+                  alt={`${h.name} — one of Davin's hobbies`}
+                  loading="lazy"
+                  width={1024}
+                  height={768}
+                  className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105${
+                    h.bw ? " grayscale" : ""
+                  }`}
+                />
+              )}
             </div>
             <div className="p-6">
               <h2 className="text-xl font-semibold text-foreground">{h.name}</h2>
