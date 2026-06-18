@@ -4,7 +4,7 @@ import {
   GraduationCap,
   Briefcase,
 } from "lucide-react";
-import portrait from "@/assets/portrait.png";
+import portrait from "@/assets/about-portrait.jpg";
 import amazonLogo from "@/assets/amazon-logo.png";
 import uwLogo from "@/assets/uw-logo.png";
 import makeabilityLogo from "@/assets/makeability-logo.png";
