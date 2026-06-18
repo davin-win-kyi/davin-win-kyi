@@ -15,7 +15,7 @@ const links = [
 
 function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <nav className="flex flex-col gap-1">
+    <nav aria-label="Main navigation" className="flex flex-col gap-1">
       {links.map((l) => (
         <Link
           key={l.to}
