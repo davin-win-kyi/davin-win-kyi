@@ -135,7 +135,12 @@ function Timeline({ items }: { items: TimelineItem[] }) {
               {item.period}
             </p>
             <div className="mt-2 rounded-xl border border-border bg-card p-6 shadow-soft">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <div className="flex flex-wrap items-center gap-3">
+                {item.icon && (
+                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-secondary text-foreground">
+                    <item.icon className="h-4.5 w-4.5" aria-hidden />
+                  </span>
+                )}
                 <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
               </div>
               <p className="mt-0.5 text-sm font-medium text-foreground">{item.subtitle}</p>
