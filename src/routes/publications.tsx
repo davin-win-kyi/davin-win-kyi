@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import sonoImg from "@/assets/pub-sonocraftar-fig.png.asset.json";
-import taskImg from "@/assets/pub-taskaudit-fig.jpg.asset.json";
+import sonoImg from "@/assets/pub-sonocraftar-fig.png";
+import taskImg from "@/assets/pub-taskaudit-fig.jpg";
 
 export const Route = createFileRoute("/publications")({
   head: () => ({
@@ -35,7 +35,7 @@ const publications: Publication[] = [
   {
     title:
       "SonoCraftAR: Towards Supporting Personalized Authoring of Sound-Reactive AR Interfaces by Deaf and Hard of Hearing Users",
-    image: sonoImg.url,
+    image: sonoImg,
     venue: "ISMAR '25 Workshop",
     authors: [
       { name: "Jaewook Lee", emphasis: true, coFirst: true },
@@ -60,7 +60,7 @@ const publications: Publication[] = [
   {
     title:
       "TaskAudit: Detecting Functiona11ity Errors in Mobile Apps via Agentic Task Execution",
-    image: taskImg.url,
+    image: taskImg,
     venue: "CHI '26",
     authors: [
       { name: "Mingyuan Zhong" },

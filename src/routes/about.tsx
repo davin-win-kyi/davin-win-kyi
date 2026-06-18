@@ -5,13 +5,13 @@ import {
   Briefcase,
 } from "lucide-react";
 import portrait from "@/assets/portrait.png";
-import amazonLogo from "@/assets/amazon-logo.png.asset.json";
-import uwLogo from "@/assets/uw-logo.png.asset.json";
-import makeabilityLogo from "@/assets/makeability-logo.png.asset.json";
-import dubLogo from "@/assets/dub-logo.png.asset.json";
-import capitalOneLogo from "@/assets/capitalone-logo.png.asset.json";
-import ansysLogo from "@/assets/ansys-logo.png.asset.json";
-import pennymacLogo from "@/assets/pennymac-logo.png.asset.json";
+import amazonLogo from "@/assets/amazon-logo.png";
+import uwLogo from "@/assets/uw-logo.png";
+import makeabilityLogo from "@/assets/makeability-logo.png";
+import dubLogo from "@/assets/dub-logo.png";
+import capitalOneLogo from "@/assets/capitalone-logo.png";
+import ansysLogo from "@/assets/ansys-logo.png";
+import pennymacLogo from "@/assets/pennymac-logo.png";
 import { RESUME_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/about")({
@@ -51,7 +51,7 @@ const education: TimelineItem[] = [
     points: [
       "Coursework: Machine Learning, Deep Learning, Computer Vision, Artificial Intelligence, Robotics, AR/VR, Databases.",
     ],
-    logo: uwLogo.url,
+    logo: uwLogo,
   },
   {
     period: "2021 – 2024",
@@ -61,7 +61,7 @@ const education: TimelineItem[] = [
     points: [
       "Built a strong foundation in algorithms, systems, and human-computer interaction.",
     ],
-    logo: uwLogo.url,
+    logo: uwLogo,
   },
 ];
 
@@ -76,7 +76,7 @@ const experience: TimelineItem[] = [
       "Fine-tuning and benchmarking models using QLoRA on a synthetic SFT dataset of 1,000 accessibility examples.",
       "Built a spatially aware AR system for previewing online products in 3D via segmentation, inpainting, and 3D generation.",
     ],
-    logo: makeabilityLogo.url,
+    logo: makeabilityLogo,
   },
   {
     period: "2024 – Present",
@@ -87,7 +87,7 @@ const experience: TimelineItem[] = [
       "Curated a dataset of 100+ LLM-generated websites with annotated accessibility errors for benchmarking and evaluation.",
       "Building a real-time personalization plugin enabling adaptive behavior across 50+ applications, used by 250+ users.",
     ],
-    logo: dubLogo.url,
+    logo: dubLogo,
   },
   {
     period: "Jun 2024 – Sep 2024",
@@ -98,7 +98,7 @@ const experience: TimelineItem[] = [
       "Designed a test application letting Amazon developers explore design variations through an LLM human-feedback loop.",
       "Prototyped a full-stack tool to test thousands of designs for Amazon.com, improving click-rate across many users.",
     ],
-    logo: amazonLogo.url,
+    logo: amazonLogo,
   },
   {
     period: "Jun 2023 – Aug 2023",
@@ -109,7 +109,7 @@ const experience: TimelineItem[] = [
       "Built a large-scale Python application for 5M+ users, reducing processing time by 73%.",
       "Containerized and deployed services on Capital One infrastructure with Docker and Kubernetes.",
     ],
-    logo: capitalOneLogo.url,
+    logo: capitalOneLogo,
   },
   {
     period: "Jan 2023 – Mar 2023",
@@ -121,7 +121,7 @@ const experience: TimelineItem[] = [
       "Collaborated with 3 developers to boost the Discovery product's test coverage by writing 50+ C# tests, reducing bugs by 15%.",
       "Resolved 100+ critical C# test failures in the Discovery product, reducing bugs by a further 10%.",
     ],
-    logo: ansysLogo.url,
+    logo: ansysLogo,
   },
   {
     period: "Jun 2022 – Aug 2022",
@@ -133,7 +133,7 @@ const experience: TimelineItem[] = [
       "Partnered with the product team to boost lead acquisition by 20% via automated Salesforce Marketing Cloud features.",
       "Programmed a secure login system letting hundreds of PennyMac employees safely retrieve data using AMPScript, HTML, CSS, and JavaScript.",
     ],
-    logo: pennymacLogo.url,
+    logo: pennymacLogo,
   },
 ];
 
