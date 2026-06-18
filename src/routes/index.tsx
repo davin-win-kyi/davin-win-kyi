@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/home-portrait.png.asset.json";
+import profilePhoto from "@/assets/home-portrait.png";
 import { RESUME_URL } from "@/lib/links";
 
 
@@ -28,7 +28,7 @@ function Index() {
         <div className="relative mx-auto w-full max-w-xs md:mx-0">
           <div className="blob blob-animated absolute -inset-4 -z-10 bg-secondary" />
           <img
-            src={profilePhoto.url}
+            src={profilePhoto}
             alt="Portrait of Davin Win Kyi"
             width={900}
             height={900}
