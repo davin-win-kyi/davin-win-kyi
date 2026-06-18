@@ -18,7 +18,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
-        <Link to="/" className="font-serif text-lg font-600 tracking-tight text-foreground">
+        <Link to="/" className="font-serif text-lg font-semibold tracking-tight text-foreground">
           Davin Kyi
         </Link>
 

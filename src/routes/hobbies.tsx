@@ -47,7 +47,7 @@ const hobbies = [
 function Hobbies() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-16 md:py-20">
-      <h1 className="text-3xl font-600 tracking-tight text-foreground sm:text-4xl">
+      <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
         Hobbies
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -71,7 +71,7 @@ function Hobbies() {
               />
             </div>
             <div className="p-6">
-              <h2 className="text-xl font-600 text-foreground">{h.name}</h2>
+              <h2 className="text-xl font-semibold text-foreground">{h.name}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{h.blurb}</p>
             </div>
           </div>

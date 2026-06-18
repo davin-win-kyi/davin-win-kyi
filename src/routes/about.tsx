@@ -79,7 +79,7 @@ export default function About() {
         </div>
 
         <div>
-          <h1 className="text-3xl font-600 tracking-tight text-foreground sm:text-4xl">About</h1>
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">About</h1>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             I'm a computer scientist focused on augmented reality, accessibility,
             and machine learning. I enjoy building systems that make everyday
@@ -87,10 +87,10 @@ export default function About() {
           </p>
 
           <section className="mt-12">
-            <h2 className="text-xl font-600 tracking-tight text-foreground">Education</h2>
+            <h2 className="text-xl font-semibold tracking-tight text-foreground">Education</h2>
             <div className="mt-4 rounded-xl border border-border bg-card p-6 shadow-soft">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-600 text-foreground">University of Washington</h3>
+                <h3 className="text-lg font-semibold text-foreground">University of Washington</h3>
                 <span className="text-sm text-muted-foreground">Expected Dec 2027</span>
               </div>
               <p className="mt-1 text-muted-foreground">
@@ -105,7 +105,7 @@ export default function About() {
           </section>
 
           <section className="mt-12">
-            <h2 className="text-xl font-600 tracking-tight text-foreground">Experience</h2>
+            <h2 className="text-xl font-semibold tracking-tight text-foreground">Experience</h2>
             <div className="mt-4 space-y-4">
               {experience.map((e) => (
                 <div
@@ -113,7 +113,7 @@ export default function About() {
                   className="rounded-xl border border-border bg-card p-6 shadow-soft"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-lg font-600 text-foreground">{e.org}</h3>
+                    <h3 className="text-lg font-semibold text-foreground">{e.org}</h3>
                     <span className="text-sm text-muted-foreground">{e.period}</span>
                   </div>
                   <p className="mt-0.5 text-sm font-medium text-primary">{e.role}</p>

@@ -36,7 +36,7 @@ const publications = [
 function Publications() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-16 md:py-20">
-      <h1 className="text-3xl font-600 tracking-tight text-foreground sm:text-4xl">
+      <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
         Publications
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -49,7 +49,7 @@ function Publications() {
             key={p.title}
             className="group rounded-xl border border-border bg-card p-6 shadow-soft transition-shadow hover:shadow-lift sm:p-8"
           >
-            <h2 className="flex items-center gap-2 text-xl font-600 text-foreground">
+            <h2 className="flex items-center gap-2 text-xl font-semibold text-foreground">
               {p.title}
             </h2>
             <p className="mt-3 leading-relaxed text-muted-foreground">{p.blurb}</p>

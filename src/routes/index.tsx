@@ -29,7 +29,7 @@ function Index() {
             <GraduationCap className="h-3.5 w-3.5 text-primary" />
             University of Washington · CSE
           </p>
-          <h1 className="text-4xl font-600 leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Davin Kyi
           </h1>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">

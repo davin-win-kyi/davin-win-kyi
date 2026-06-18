@@ -38,7 +38,7 @@ const courses = [
 function Teaching() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-16 md:py-20">
-      <h1 className="text-3xl font-600 tracking-tight text-foreground sm:text-4xl">
+      <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
         Teaching
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -53,8 +53,8 @@ function Teaching() {
             key={c.code}
             className="rounded-xl border border-border bg-card p-6 shadow-soft"
           >
-            <p className="font-serif text-2xl font-600 text-primary">{c.code}</p>
-            <h2 className="mt-1 text-lg font-600 text-foreground">{c.name}</h2>
+            <p className="font-serif text-2xl font-semibold text-primary">{c.code}</p>
+            <h2 className="mt-1 text-lg font-semibold text-foreground">{c.name}</h2>
             <p className="mt-1 text-sm text-muted-foreground">{c.role}</p>
           </div>
         ))}
