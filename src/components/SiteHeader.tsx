@@ -50,9 +50,12 @@ export function SiteHeader() {
             <NavLinks />
           </div>
         </div>
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Davin Win Kyi
-        </p>
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Davin Win Kyi
+          </p>
+          <ThemeToggle />
+        </div>
       </aside>
 
       {/* Mobile top bar */}
@@ -60,13 +63,16 @@ export function SiteHeader() {
         <Link to="/" className="font-serif text-lg font-bold tracking-tight text-foreground">
           Davin Win Kyi
         </Link>
-        <button
-          className="inline-flex items-center justify-center rounded-md p-2 text-foreground"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="inline-flex items-center justify-center rounded-md p-2 text-foreground"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </header>
 
       <div
