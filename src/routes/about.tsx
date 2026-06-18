@@ -112,7 +112,7 @@ function Timeline({ items }: { items: TimelineItem[] }) {
               className="absolute -left-[29px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-background bg-primary ring-1 ring-border"
               aria-hidden
             />
-            <p className="font-serif text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               {item.period}
             </p>
             <div className="mt-2 rounded-xl border border-border bg-card p-6 shadow-soft">
