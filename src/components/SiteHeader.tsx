@@ -60,7 +60,7 @@ export function SiteHeader() {
 
       {/* Mobile top bar */}
       <header className="sticky top-0 z-50 flex items-center justify-between border-b border-border/60 bg-background/80 px-5 py-4 backdrop-blur-md md:hidden">
-        <Link to="/" className="font-serif text-lg font-bold tracking-tight text-foreground">
+        <Link to="/" className="text-lg font-bold tracking-tight text-foreground">
           Davin Win Kyi
         </Link>
         <div className="flex items-center gap-2">
