@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
-import heroImage from "@/assets/hero-lake.jpg.asset.json";
+import heroImage from "@/assets/hero-lake.jpg";
 import { RESUME_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/")({
@@ -87,7 +87,7 @@ function Index() {
         <div className="relative">
           <div className="absolute -inset-3 -z-10 rounded-3xl bg-primary/10 blur-2xl" />
           <img
-            src={heroImage.url}
+            src={heroImage}
             alt="Davin Kyi standing on a rock by an alpine lake"
             width={900}
             height={1200}
