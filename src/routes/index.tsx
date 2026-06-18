@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.png.asset.json";
+import profilePhoto from "@/assets/home-portrait.png.asset.json";
 import { RESUME_URL } from "@/lib/links";
 
 
@@ -33,7 +33,7 @@ function Index() {
             width={900}
             height={900}
             className="blob blob-animated aspect-square w-full object-cover shadow-lift"
-            style={{ objectPosition: "50% 22%" }}
+            style={{ objectPosition: "50% 30%" }}
           />
         </div>
 
@@ -43,11 +43,12 @@ function Index() {
             University of Washington · CSE
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Davin Win Kyi
+            Hi there! I'm Davin
           </h1>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">
-            M.S. Computer Science &amp; Engineering student researching augmented
-            reality, accessibility, and machine learning at the Makeability Lab.
+            My name is Davin and I'm a graduate student at the University of
+            Washington doing research in augmented reality, accessibility, and
+            machine learning at the Makeability Lab.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

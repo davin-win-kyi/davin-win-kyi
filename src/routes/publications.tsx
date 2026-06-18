@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import sonoImg from "@/assets/pub-sonocraftar.jpg";
-import taskImg from "@/assets/pub-taskaudit.jpg";
+import sonoImg from "@/assets/pub-sonocraftar-fig.png.asset.json";
+import taskImg from "@/assets/pub-taskaudit-fig.jpg.asset.json";
 
 export const Route = createFileRoute("/publications")({
   head: () => ({
@@ -25,7 +25,8 @@ type Publication = {
   title: string;
   image: string;
   venue: string;
-  authors: { name: string; emphasis?: boolean }[];
+  authors: { name: string; emphasis?: boolean; coFirst?: boolean }[];
+  note?: string;
   blurb: string;
   links: Link[];
 };
@@ -34,11 +35,11 @@ const publications: Publication[] = [
   {
     title:
       "SonoCraftAR: Towards Supporting Personalized Authoring of Sound-Reactive AR Interfaces by Deaf and Hard of Hearing Users",
-    image: sonoImg,
+    image: sonoImg.url,
     venue: "ISMAR '25 Workshop",
     authors: [
-      { name: "Jaewook Lee" },
-      { name: "Davin Win Kyi", emphasis: true },
+      { name: "Jaewook Lee", emphasis: true, coFirst: true },
+      { name: "Davin Win Kyi", emphasis: true, coFirst: true },
       { name: "Leejun Kim" },
       { name: "Jenny Peng" },
       { name: "Gagyeom Lim" },
@@ -46,6 +47,7 @@ const publications: Publication[] = [
       { name: "Dhruv Jain" },
       { name: "Jon E. Froehlich" },
     ],
+    note: "* Denotes equal contribution (co-first authors).",
     blurb:
       "A system supporting personalized authoring of sound-reactive AR interfaces, enabling Deaf and hard of hearing users to design how everyday sounds are visualized in augmented reality.",
     links: [
@@ -57,13 +59,24 @@ const publications: Publication[] = [
   },
   {
     title:
-      "TaskAudit: Auditing Accessibility Errors in AI-Generated User Interfaces",
-    image: taskImg,
-    venue: "In Submission",
-    authors: [{ name: "Davin Win Kyi", emphasis: true }, { name: "et al." }],
+      "TaskAudit: Detecting Functiona11ity Errors in Mobile Apps via Agentic Task Execution",
+    image: taskImg.url,
+    venue: "CHI '26",
+    authors: [
+      { name: "Mingyuan Zhong" },
+      { name: "Xia Chen" },
+      { name: "Davin Win Kyi", emphasis: true },
+      { name: "Li Chen" },
+      { name: "James Fogarty" },
+      { name: "Jacob O. Wobbrock" },
+    ],
     blurb:
-      "A framework for auditing and evaluating task completion and accessibility errors in LLM-generated interfaces, surfacing where automatically produced UIs break down for real users.",
+      "TaskAudit introduces \"functiona11ity\" errors — accessibility barriers that only surface through interaction. Using a Task Generator, a Task Executor with a screen reader proxy, and an Accessibility Analyzer, it detected 48 functiona11ity errors across 54 real-world app screens, far more than existing checkers.",
     links: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2510.12972",
+      },
       {
         label: "Scholar",
         href: "https://scholar.google.com/citations?user=oS2UUosAAAAJ&hl=en",
@@ -113,11 +126,16 @@ function Publications() {
                 <span key={a.name}>
                   <span className={a.emphasis ? "font-semibold text-foreground" : ""}>
                     {a.name}
+                    {a.coFirst ? "*" : ""}
                   </span>
                   {i < p.authors.length - 1 ? ", " : ""}
                 </span>
               ))}
             </p>
+
+            {p.note && (
+              <p className="mt-2 text-xs italic text-muted-foreground">{p.note}</p>
+            )}
 
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {p.blurb}
