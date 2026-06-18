@@ -24,12 +24,12 @@ export const Route = createFileRoute("/hobbies")({
 const hobbies = [
   {
     name: "Lifting",
-    image: lifting,
+    image: lifting.url,
     blurb: "Chasing progressive overload and steady strength gains in the gym.",
   },
   {
     name: "Boxing",
-    image: boxing,
+    image: boxing.url,
     blurb: "Footwork, conditioning, and the focus that comes with sparring.",
   },
   {
