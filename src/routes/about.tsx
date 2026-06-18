@@ -6,6 +6,12 @@ import {
 } from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import amazonLogo from "@/assets/amazon-logo.png.asset.json";
+import uwLogo from "@/assets/uw-logo.png.asset.json";
+import makeabilityLogo from "@/assets/makeability-logo.png.asset.json";
+import dubLogo from "@/assets/dub-logo.png.asset.json";
+import capitalOneLogo from "@/assets/capitalone-logo.png.asset.json";
+import ansysLogo from "@/assets/ansys-logo.png.asset.json";
+import pennymacLogo from "@/assets/pennymac-logo.png.asset.json";
 import { RESUME_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/about")({
@@ -45,8 +51,7 @@ const education: TimelineItem[] = [
     points: [
       "Coursework: Machine Learning, Deep Learning, Computer Vision, Artificial Intelligence, Robotics, AR/VR, Databases.",
     ],
-    initials: "UW",
-    bg: "#4B2E83",
+    logo: uwLogo.url,
   },
   {
     period: "2021 – 2024",
@@ -56,8 +61,7 @@ const education: TimelineItem[] = [
     points: [
       "Built a strong foundation in algorithms, systems, and human-computer interaction.",
     ],
-    initials: "UW",
-    bg: "#4B2E83",
+    logo: uwLogo.url,
   },
 ];
 
@@ -72,19 +76,18 @@ const experience: TimelineItem[] = [
       "Fine-tuning and benchmarking models using QLoRA on a synthetic SFT dataset of 1,000 accessibility examples.",
       "Built a spatially aware AR system for previewing online products in 3D via segmentation, inpainting, and 3D generation.",
     ],
-    initials: "ML",
-    bg: "#0F4C81",
+    logo: makeabilityLogo.url,
   },
   {
     period: "2024 – Present",
     title: "DUB Group",
-    subtitle: "Research Affiliate",
+    subtitle: "Software Lead",
     location: "University of Washington",
     points: [
-      "Active member of UW's interdisciplinary HCI community, collaborating across labs on accessibility and AR research.",
+      "Curated a dataset of 100+ LLM-generated websites with annotated accessibility errors for benchmarking and evaluation.",
+      "Building a real-time personalization plugin enabling adaptive behavior across 50+ applications, used by 250+ users.",
     ],
-    initials: "DUB",
-    bg: "#2E8B57",
+    logo: dubLogo.url,
   },
   {
     period: "Jun 2024 – Sep 2024",
@@ -98,17 +101,6 @@ const experience: TimelineItem[] = [
     logo: amazonLogo.url,
   },
   {
-    period: "2023 – 2024",
-    title: "Research Internship",
-    subtitle: "Undergraduate Research Intern",
-    location: "University of Washington",
-    points: [
-      "Conducted applied research at the intersection of augmented reality, accessibility, and machine learning.",
-    ],
-    initials: "RS",
-    bg: "#6B7280",
-  },
-  {
     period: "Jun 2023 – Aug 2023",
     title: "Capital One",
     subtitle: "Software Engineer Intern",
@@ -117,8 +109,27 @@ const experience: TimelineItem[] = [
       "Built a large-scale Python application for 5M+ users, reducing processing time by 73%.",
       "Containerized and deployed services on Capital One infrastructure with Docker and Kubernetes.",
     ],
-    initials: "C1",
-    bg: "#004977",
+    logo: capitalOneLogo.url,
+  },
+  {
+    period: "2022 – 2023",
+    title: "Ansys",
+    subtitle: "Software Engineer Intern",
+    location: "Remote",
+    points: [
+      "Built and tested software features for Ansys engineering simulation products.",
+    ],
+    logo: ansysLogo.url,
+  },
+  {
+    period: "2021 – 2022",
+    title: "PennyMac",
+    subtitle: "Software Engineer Intern",
+    location: "Remote",
+    points: [
+      "Developed and maintained backend services and tooling for mortgage and lending platforms.",
+    ],
+    logo: pennymacLogo.url,
   },
 ];
 
