@@ -95,22 +95,23 @@ function Publications() {
         Publications
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        Selected research projects spanning augmented reality and accessibility.
+        Research spanning augmented reality and accessibility.
       </p>
 
       <div className="mt-12 grid gap-10 md:grid-cols-2">
         {publications.map((p) => (
           <article key={p.title} className="flex flex-col">
-            <div className="aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary/40 p-4 shadow-soft">
               <img
                 src={p.image}
-                alt={p.title}
+                alt={`Figure from ${p.title}`}
                 loading="lazy"
                 width={1024}
                 height={1024}
-                className="h-full w-full object-cover"
+                className="max-h-full max-w-full rounded-lg object-contain"
               />
             </div>
+
 
             <p className="mt-6 text-sm font-medium text-muted-foreground">
               {p.venue}
