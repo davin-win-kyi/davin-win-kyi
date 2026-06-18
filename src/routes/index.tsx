@@ -46,9 +46,9 @@ function Index() {
             Hi there! I'm Davin
           </h1>
           <p className="mt-5 max-w-sm text-base leading-relaxed text-muted-foreground">
-            Graduate student at the University of Washington researching
-            augmented reality, accessibility, and machine learning with the
-            Makeability Lab and DUB Group.
+            Graduate student at the University of Washington where my research
+            lies in the application of machine learning and artificial intelligence
+            into the space of augmented reality, accessibility, and other fields.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
