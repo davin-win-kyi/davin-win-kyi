@@ -3,7 +3,6 @@ import {
   FileText,
   GraduationCap,
   Briefcase,
-  type LucideProps,
 } from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import amazonLogo from "@/assets/amazon-logo.png.asset.json";
@@ -32,7 +31,9 @@ type TimelineItem = {
   subtitle: string;
   location?: string;
   points?: string[];
-  icon?: React.ComponentType<LucideProps>;
+  logo?: string;
+  initials?: string;
+  bg?: string;
 };
 
 const education: TimelineItem[] = [
@@ -44,7 +45,8 @@ const education: TimelineItem[] = [
     points: [
       "Coursework: Machine Learning, Deep Learning, Computer Vision, Artificial Intelligence, Robotics, AR/VR, Databases.",
     ],
-    icon: School,
+    initials: "UW",
+    bg: "#4B2E83",
   },
   {
     period: "2021 – 2024",
@@ -54,7 +56,8 @@ const education: TimelineItem[] = [
     points: [
       "Built a strong foundation in algorithms, systems, and human-computer interaction.",
     ],
-    icon: School,
+    initials: "UW",
+    bg: "#4B2E83",
   },
 ];
 
@@ -69,7 +72,8 @@ const experience: TimelineItem[] = [
       "Fine-tuning and benchmarking models using QLoRA on a synthetic SFT dataset of 1,000 accessibility examples.",
       "Built a spatially aware AR system for previewing online products in 3D via segmentation, inpainting, and 3D generation.",
     ],
-    icon: Microscope,
+    initials: "ML",
+    bg: "#0F4C81",
   },
   {
     period: "2024 – Present",
@@ -79,7 +83,8 @@ const experience: TimelineItem[] = [
     points: [
       "Active member of UW's interdisciplinary HCI community, collaborating across labs on accessibility and AR research.",
     ],
-    icon: Users,
+    initials: "DUB",
+    bg: "#2E8B57",
   },
   {
     period: "Jun 2024 – Sep 2024",
@@ -90,7 +95,7 @@ const experience: TimelineItem[] = [
       "Designed a test application letting Amazon developers explore design variations through an LLM human-feedback loop.",
       "Prototyped a full-stack tool to test thousands of designs for Amazon.com, improving click-rate across many users.",
     ],
-    icon: ShoppingBag,
+    logo: amazonLogo.url,
   },
   {
     period: "2023 – 2024",
@@ -100,7 +105,8 @@ const experience: TimelineItem[] = [
     points: [
       "Conducted applied research at the intersection of augmented reality, accessibility, and machine learning.",
     ],
-    icon: Search,
+    initials: "RS",
+    bg: "#6B7280",
   },
   {
     period: "Jun 2023 – Aug 2023",
@@ -111,9 +117,37 @@ const experience: TimelineItem[] = [
       "Built a large-scale Python application for 5M+ users, reducing processing time by 73%.",
       "Containerized and deployed services on Capital One infrastructure with Docker and Kubernetes.",
     ],
-    icon: Building2,
+    initials: "C1",
+    bg: "#004977",
   },
 ];
+
+function OrgAvatar({ item }: { item: TimelineItem }) {
+  if (item.logo) {
+    return (
+      <span className="flex h-9 w-9 flex-none items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm">
+        <img
+          src={item.logo}
+          alt={`${item.title} logo`}
+          className="h-full w-full object-contain p-0.5"
+          loading="lazy"
+        />
+      </span>
+    );
+  }
+  if (item.initials && item.bg) {
+    return (
+      <span
+        className="flex h-9 w-9 flex-none items-center justify-center rounded-lg text-xs font-bold text-white shadow-sm"
+        style={{ backgroundColor: item.bg }}
+        aria-hidden
+      >
+        {item.initials}
+      </span>
+    );
+  }
+  return null;
+}
 
 function Timeline({ items }: { items: TimelineItem[] }) {
   return (
@@ -131,11 +165,7 @@ function Timeline({ items }: { items: TimelineItem[] }) {
             </p>
             <div className="mt-2 rounded-xl border border-border bg-card p-6 shadow-soft">
               <div className="flex flex-wrap items-center gap-3">
-                {item.icon && (
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-secondary text-foreground">
-                    <item.icon className="h-4 w-4" aria-hidden />
-                  </span>
-                )}
+                <OrgAvatar item={item} />
                 <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
               </div>
               <p className="mt-0.5 text-sm font-medium text-foreground">{item.subtitle}</p>
