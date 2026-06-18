@@ -41,9 +41,9 @@ export function SiteHeader() {
         <div>
           <Link
             to="/"
-            className="font-serif text-2xl font-bold tracking-tight text-foreground"
+            className="font-serif text-2xl font-bold leading-tight tracking-tight text-foreground"
           >
-            Davin
+            Davin Win Kyi
           </Link>
           <div className="mt-12">
             <NavLinks />
