@@ -155,7 +155,7 @@ export default function About() {
               height={600}
               loading="lazy"
               className="blob blob-animated aspect-square w-full object-cover shadow-lift"
-              style={{ objectPosition: "50% 20%" }}
+              style={{ objectPosition: "50% 12%" }}
             />
           </div>
           <a
