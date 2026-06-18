@@ -1,6 +1,4 @@
-import resume from "@/assets/resume.pdf.asset.json";
-
-export const RESUME_URL = resume.url;
+export const RESUME_URL = "/resume.pdf";
 
 export const EMAIL = "davin123@cs.washington.edu";
 
