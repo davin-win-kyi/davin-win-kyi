@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
-import heroImage from "@/assets/hero-lake.jpg";
+import profilePhoto from "@/assets/profile-photo.png.asset.json";
 import { RESUME_URL } from "@/lib/links";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
