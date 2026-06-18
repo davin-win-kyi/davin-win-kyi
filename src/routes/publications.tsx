@@ -126,11 +126,16 @@ function Publications() {
                 <span key={a.name}>
                   <span className={a.emphasis ? "font-semibold text-foreground" : ""}>
                     {a.name}
+                    {a.coFirst ? "*" : ""}
                   </span>
                   {i < p.authors.length - 1 ? ", " : ""}
                 </span>
               ))}
             </p>
+
+            {p.note && (
+              <p className="mt-2 text-xs italic text-muted-foreground">{p.note}</p>
+            )}
 
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {p.blurb}
