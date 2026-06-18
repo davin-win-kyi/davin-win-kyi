@@ -50,7 +50,7 @@ export function SiteHeader() {
           </div>
         </div>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Davin Kyi
+          © {new Date().getFullYear()} Davin Win Kyi
         </p>
       </aside>
 
