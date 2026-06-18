@@ -86,9 +86,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Davin Kyi" },
       { property: "og:title", content: "Davin Kyi" },
-      { property: "og:description", content: "CS researcher at the University of Washington." },
+      { property: "og:description", content: "My Personal Hub is a personal website builder for showcasing your professional and personal life." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Davin Kyi" },
+      { name: "description", content: "My Personal Hub is a personal website builder for showcasing your professional and personal life." },
+      { name: "twitter:description", content: "My Personal Hub is a personal website builder for showcasing your professional and personal life." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7cf73d8b-54d8-44e7-898f-600fcb4c2d68/id-preview-7815552f--c2c57904-7ca2-4fdc-8b92-fcf743bdd5fc.lovable.app-1781784185287.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7cf73d8b-54d8-44e7-898f-600fcb4c2d68/id-preview-7815552f--c2c57904-7ca2-4fdc-8b92-fcf743bdd5fc.lovable.app-1781784185287.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -96,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap",
       },
     ],
   }),
@@ -110,11 +115,6 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
-          }}
-        />
         <HeadContent />
       </head>
       <body>
@@ -130,20 +130,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lift"
-      >
-        Skip to content
-      </a>
-      <div className="flex min-h-screen flex-col md:flex-row">
+      <div className="flex min-h-screen flex-col">
         <SiteHeader />
-        <div className="flex min-w-0 flex-1 flex-col">
-          <main id="main-content" className="flex-1">
-            <Outlet />
-          </main>
-          <SiteFooter />
-        </div>
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
       </div>
     </QueryClientProvider>
   );
