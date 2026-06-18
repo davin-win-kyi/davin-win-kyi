@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import lifting from "@/assets/lifting.jpg";
-import boxing from "@/assets/boxing.jpg";
+import lifting from "@/assets/lifting-gym.png.asset.json";
+import boxing from "@/assets/boxing-gloves.png.asset.json";
 import snowboarding from "@/assets/snowboarding.png";
 import running from "@/assets/running.png";
 
