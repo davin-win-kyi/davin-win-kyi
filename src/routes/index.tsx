@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.png.asset.json";
+import profilePhoto from "@/assets/home-portrait.png.asset.json";
 import { RESUME_URL } from "@/lib/links";
 
 
