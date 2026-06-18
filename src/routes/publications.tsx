@@ -1,82 +1,143 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink } from "lucide-react";
+import sonoImg from "@/assets/pub-sonocraftar.jpg";
+import taskImg from "@/assets/pub-taskaudit.jpg";
 
 export const Route = createFileRoute("/publications")({
   head: () => ({
     meta: [
-      { title: "Publications — Davin Kyi" },
+      { title: "Publications — Davin Win Kyi" },
       {
         name: "description",
         content:
-          "Research publications by Davin Kyi, including SonoCraftAR and TaskAudit.",
+          "Research publications by Davin Win Kyi, including SonoCraftAR and TaskAudit.",
       },
-      { property: "og:title", content: "Publications — Davin Kyi" },
-      { property: "og:description", content: "Research publications by Davin Kyi." },
+      { property: "og:title", content: "Publications — Davin Win Kyi" },
+      { property: "og:description", content: "Research publications by Davin Win Kyi." },
     ],
     links: [{ rel: "canonical", href: "/publications" }],
   }),
   component: Publications,
 });
 
-const publications = [
+type Link = { label: string; href: string };
+
+type Publication = {
+  title: string;
+  image: string;
+  venue: string;
+  authors: { name: string; emphasis?: boolean }[];
+  blurb: string;
+  links: Link[];
+};
+
+const publications: Publication[] = [
   {
-    title: "SonoCraftAR",
+    title:
+      "SonoCraftAR: Towards Supporting Personalized Authoring of Sound-Reactive AR Interfaces by Deaf and Hard of Hearing Users",
+    image: sonoImg,
+    venue: "ISMAR '25 Workshop",
+    authors: [
+      { name: "Jaewook Lee" },
+      { name: "Davin Win Kyi", emphasis: true },
+      { name: "Leejun Kim" },
+      { name: "Jenny Peng" },
+      { name: "Gagyeom Lim" },
+      { name: "Jeremy Zhengqi Huang" },
+      { name: "Dhruv Jain" },
+      { name: "Jon E. Froehlich" },
+    ],
     blurb:
-      "An augmented reality system exploring expressive, spatially-aware sound and interaction design for AR experiences.",
-    tags: ["Augmented Reality", "Interaction"],
+      "A system supporting personalized authoring of sound-reactive AR interfaces, enabling Deaf and hard of hearing users to design how everyday sounds are visualized in augmented reality.",
+    links: [
+      {
+        label: "Scholar",
+        href: "https://scholar.google.com/citations?user=oS2UUosAAAAJ&hl=en",
+      },
+    ],
   },
   {
-    title: "TaskAudit",
+    title:
+      "TaskAudit: Auditing Accessibility Errors in AI-Generated User Interfaces",
+    image: taskImg,
+    venue: "In Submission",
+    authors: [{ name: "Davin Win Kyi", emphasis: true }, { name: "et al." }],
     blurb:
-      "A framework for auditing and evaluating task completion and accessibility errors in LLM-generated interfaces.",
-    tags: ["Accessibility", "LLMs", "Evaluation"],
+      "A framework for auditing and evaluating task completion and accessibility errors in LLM-generated interfaces, surfacing where automatically produced UIs break down for real users.",
+    links: [
+      {
+        label: "Scholar",
+        href: "https://scholar.google.com/citations?user=oS2UUosAAAAJ&hl=en",
+      },
+    ],
   },
 ];
 
 function Publications() {
   return (
-    <div className="mx-auto max-w-5xl px-5 py-16 md:py-20">
-      <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+    <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+      <p className="inline-block rounded-md bg-secondary px-3 py-1 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+        Papers
+      </p>
+      <h1 className="mt-5 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         Publications
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
         Selected research projects spanning augmented reality and accessibility.
       </p>
 
-      <div className="mt-10 space-y-5">
+      <div className="mt-12 grid gap-10 md:grid-cols-2">
         {publications.map((p) => (
-          <article
-            key={p.title}
-            className="group rounded-xl border border-border bg-card p-6 shadow-soft transition-shadow hover:shadow-lift sm:p-8"
-          >
-            <h2 className="flex items-center gap-2 text-xl font-semibold text-foreground">
+          <article key={p.title} className="flex flex-col">
+            <div className="aspect-[16/10] overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+              <img
+                src={p.image}
+                alt={p.title}
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <p className="mt-6 text-sm font-medium text-muted-foreground">
+              {p.venue}
+            </p>
+            <div className="mt-3 border-t border-border" />
+
+            <h2 className="mt-5 text-2xl font-bold leading-snug tracking-tight text-foreground">
               {p.title}
             </h2>
-            <p className="mt-3 leading-relaxed text-muted-foreground">{p.blurb}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {p.tags.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
-                >
-                  {t}
+
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              {p.authors.map((a, i) => (
+                <span key={a.name}>
+                  <span className={a.emphasis ? "font-semibold text-foreground" : ""}>
+                    {a.name}
+                  </span>
+                  {i < p.authors.length - 1 ? ", " : ""}
                 </span>
+              ))}
+            </p>
+
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {p.blurb}
+            </p>
+
+            <div className="mt-5 flex flex-wrap gap-5">
+              {p.links.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-bold uppercase tracking-wide text-foreground underline-offset-4 transition-colors hover:text-muted-foreground hover:underline"
+                >
+                  {l.label}
+                </a>
               ))}
             </div>
           </article>
         ))}
-      </div>
-
-      <div className="mt-10">
-        <a
-          href="https://scholar.google.com/citations?user=oS2UUosAAAAJ&hl=en"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
-        >
-          View on Google Scholar
-          <ExternalLink className="h-4 w-4" />
-        </a>
       </div>
     </div>
   );
