@@ -60,7 +60,7 @@ export default function About() {
       <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
         <div className="md:sticky md:top-24 md:self-start">
           <img
-            src={portrait.url}
+            src={portrait}
             alt="Portrait of Davin Kyi"
             width={600}
             height={600}

@@ -34,12 +34,12 @@ const hobbies = [
   },
   {
     name: "Snowboarding",
-    image: snowboarding.url,
+    image: snowboarding,
     blurb: "Carving down the mountain whenever the season allows.",
   },
   {
     name: "Running",
-    image: running.url,
+    image: running,
     blurb: "Logging miles around the neighborhood to clear my head.",
   },
 ];
