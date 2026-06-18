@@ -42,7 +42,7 @@ export function SiteHeader() {
         <div>
           <Link
             to="/"
-            className="font-serif text-2xl font-bold leading-tight tracking-tight text-foreground"
+            className="text-2xl font-bold leading-tight tracking-tight text-foreground"
           >
             Davin Win Kyi
           </Link>
