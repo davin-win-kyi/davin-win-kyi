@@ -236,9 +236,10 @@ export default function About() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">About</h1>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            I'm a computer scientist focused on augmented reality, accessibility,
-            and machine learning. I enjoy building systems that make everyday
-            digital and physical experiences more usable for everyone.
+            I'm a computer scientist applying machine learning and artificial
+            intelligence in the space of augmented reality, accessibility, and
+            human-computer interaction. I enjoy building systems that make
+            everyday digital and physical experiences more usable for everyone.
           </p>
 
           <section className="mt-12">
