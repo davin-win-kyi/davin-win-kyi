@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import lifting from "@/assets/lifting.jpg";
 import boxing from "@/assets/boxing.jpg";
-import snowboarding from "@/assets/snowboarding.png.asset.json";
-import running from "@/assets/running.png.asset.json";
+import snowboarding from "@/assets/snowboarding.png";
+import running from "@/assets/running.png";
 
 export const Route = createFileRoute("/hobbies")({
   head: () => ({

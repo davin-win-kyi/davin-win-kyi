@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FileText } from "lucide-react";
-import portrait from "@/assets/portrait.png.asset.json";
+import portrait from "@/assets/portrait.png";
 import { RESUME_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/about")({
