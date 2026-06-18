@@ -43,11 +43,12 @@ function Index() {
             University of Washington · CSE
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Davin Win Kyi
+            Hi there! I'm Davin
           </h1>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">
-            M.S. Computer Science &amp; Engineering student researching augmented
-            reality, accessibility, and machine learning at the Makeability Lab.
+            My name is Davin and I'm a graduate student at the University of
+            Washington doing research in augmented reality, accessibility, and
+            machine learning at the Makeability Lab.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
