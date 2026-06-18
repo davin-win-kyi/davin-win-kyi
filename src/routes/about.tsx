@@ -37,6 +37,7 @@ type TimelineItem = {
   subtitle: string;
   location?: string;
   points?: string[];
+  icon?: React.ComponentType<LucideProps>;
 };
 
 const education: TimelineItem[] = [
