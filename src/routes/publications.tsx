@@ -71,7 +71,7 @@ const publications: Publication[] = [
       { name: "Jacob O. Wobbrock" },
     ],
     blurb:
-      "TaskAudit introduces \"functiona11ity\" errors — accessibility barriers that only surface through interaction. Using a Task Generator, a Task Executor with a screen reader proxy, and an Accessibility Analyzer, it detected 48 functiona11ity errors across 54 real-world app screens, far more than existing checkers.",
+      "An agentic pipeline that uncovers \"functiona11ity\" errors — accessibility barriers that only surface through real interaction with mobile apps.",
     links: [
       {
         label: "arXiv",
