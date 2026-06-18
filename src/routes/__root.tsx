@@ -130,10 +130,16 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lift"
+      >
+        Skip to content
+      </a>
       <div className="flex min-h-screen flex-col md:flex-row">
         <SiteHeader />
         <div className="flex min-w-0 flex-1 flex-col">
-          <main className="flex-1">
+          <main id="main-content" className="flex-1">
             <Outlet />
           </main>
           <SiteFooter />
