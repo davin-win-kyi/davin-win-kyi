@@ -45,10 +45,10 @@ function Index() {
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Hi there! I'm Davin
           </h1>
-          <p className="mt-5 max-w-md text-lg leading-relaxed text-muted-foreground">
-            My name is Davin and I'm a graduate student at the University of
-            Washington doing research in augmented reality, accessibility, and
-            machine learning at the Makeability Lab.
+          <p className="mt-5 max-w-sm text-base leading-relaxed text-muted-foreground">
+            Graduate student at the University of Washington researching
+            augmented reality, accessibility, and machine learning with the
+            Makeability Lab and DUB Group.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

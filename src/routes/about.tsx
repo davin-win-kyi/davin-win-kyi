@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { FileText, GraduationCap, Briefcase } from "lucide-react";
+import {
+  FileText,
+  GraduationCap,
+  Briefcase,
+  School,
+  Microscope,
+  Users,
+  ShoppingBag,
+  Search,
+  Building2,
+  type LucideProps,
+} from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import { RESUME_URL } from "@/lib/links";
 
