@@ -1,6 +1,4 @@
-import resumeAsset from "@/assets/resume.pdf.asset.json";
-
-export const RESUME_URL = resumeAsset.url;
+export const RESUME_URL = "/resume.pdf";
 
 export const SOCIAL_LINKS = [
   { label: "Google Scholar", href: "https://scholar.google.com/citations?user=oS2UUosAAAAJ&hl=en" },
