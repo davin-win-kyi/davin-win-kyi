@@ -6,6 +6,12 @@ import {
 } from "lucide-react";
 import portrait from "@/assets/portrait.png";
 import amazonLogo from "@/assets/amazon-logo.png.asset.json";
+import uwLogo from "@/assets/uw-logo.png.asset.json";
+import makeabilityLogo from "@/assets/makeability-logo.png.asset.json";
+import dubLogo from "@/assets/dub-logo.png.asset.json";
+import capitalOneLogo from "@/assets/capitalone-logo.png.asset.json";
+import ansysLogo from "@/assets/ansys-logo.png.asset.json";
+import pennymacLogo from "@/assets/pennymac-logo.png.asset.json";
 import { RESUME_URL } from "@/lib/links";
 
 export const Route = createFileRoute("/about")({
