@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import cse473 from "@/assets/course-cse473.jpg";
+import cse340 from "@/assets/course-cse340.jpg";
+import cse414 from "@/assets/course-cse414.jpg";
 
 export const Route = createFileRoute("/teaching")({
   head: () => ({
@@ -17,24 +20,36 @@ export const Route = createFileRoute("/teaching")({
   component: Teaching,
 });
 
-const timeline = [
+type Course = {
+  year: string;
+  code: string;
+  name: string;
+  role: string;
+  image: string;
+};
+
+// Most recent first, oldest last.
+const timeline: Course[] = [
   {
-    year: "2022",
-    code: "CSE 414",
-    name: "Introduction to Database Systems",
+    year: "2024 – 2025",
+    code: "CSE 473",
+    name: "Introduction to Artificial Intelligence",
     role: "Teaching Assistant",
+    image: cse473,
   },
   {
     year: "2023",
     code: "CSE 340",
     name: "Interaction Programming",
     role: "Teaching Assistant",
+    image: cse340,
   },
   {
-    year: "2024 – 2025",
-    code: "CSE 473",
-    name: "Introduction to Artificial Intelligence",
+    year: "2022",
+    code: "CSE 414",
+    name: "Introduction to Database Systems",
     role: "Teaching Assistant",
+    image: cse414,
   },
 ];
 
@@ -64,12 +79,24 @@ function Teaching() {
               <p className="font-serif text-sm font-semibold uppercase tracking-widest text-muted-foreground">
                 {t.year}
               </p>
-              <div className="mt-2 rounded-xl border border-border bg-card p-6 shadow-soft">
-                <p className="font-serif text-2xl font-semibold text-foreground">
-                  {t.code}
-                </p>
-                <h2 className="mt-1 text-lg font-semibold text-foreground">{t.name}</h2>
-                <p className="mt-1 text-sm text-muted-foreground">{t.role}</p>
+              <div className="mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-soft">
+                <div className="aspect-[16/7] w-full overflow-hidden border-b border-border bg-secondary">
+                  <img
+                    src={t.image}
+                    alt={`${t.code} — ${t.name}`}
+                    loading="lazy"
+                    width={1024}
+                    height={640}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="font-serif text-2xl font-semibold text-foreground">
+                    {t.code}
+                  </p>
+                  <h2 className="mt-1 text-lg font-semibold text-foreground">{t.name}</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">{t.role}</p>
+                </div>
               </div>
             </li>
           ))}
