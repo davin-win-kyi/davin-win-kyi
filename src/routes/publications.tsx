@@ -84,6 +84,26 @@ const publications: Publication[] = [
       },
     ],
   },
+  {
+    title:
+      "Do as the Romans Do: Learning Universal Behaviors from Heterogeneous Agents",
+    image: romansImg,
+    venue: "arXiv '26",
+    authors: [
+      { name: "Caleb Chang" },
+      { name: "Davin Win Kyi", emphasis: true },
+      { name: "Natasha Jaques" },
+      { name: "Karen Leung" },
+    ],
+    blurb:
+      "A framework for learning generalizable behaviors across diverse agent types by distilling shared patterns from heterogeneous populations.",
+    links: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2606.18537",
+      },
+    ],
+  },
 ];
 
 function Publications() {
