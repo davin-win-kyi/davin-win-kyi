@@ -238,8 +238,8 @@ export default function About() {
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             I'm a computer scientist applying machine learning and artificial
             intelligence in the space of augmented reality, accessibility, and
-            human-computer interaction. I enjoy building systems that make
-            everyday digital and physical experiences more usable for everyone.
+            human-computer interaction. I enjoy making systems that help bring
+            the best out of anyone, whoever they are!
           </p>
 
           <section className="mt-12">
