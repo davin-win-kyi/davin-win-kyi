@@ -43,6 +43,12 @@ const hobbies: Hobby[] = [
     blurb: "Carving down the mountain whenever the season allows.",
   },
   {
+    name: "Boxing",
+    video: boxingVideo.url,
+    poster: boxingPoster.url,
+    blurb: "Footwork, conditioning, and the focus that comes with sparring.",
+  },
+  {
     name: "Running",
     video: runningVideo.url,
     poster: runningPoster.url,
@@ -53,12 +59,6 @@ const hobbies: Hobby[] = [
     video: liftingVideo.url,
     poster: liftingPoster.url,
     blurb: "Chasing progressive overload and steady strength gains in the gym.",
-  },
-  {
-    name: "Boxing",
-    video: boxingVideo.url,
-    poster: boxingPoster.url,
-    blurb: "Footwork, conditioning, and the focus that comes with sparring.",
   },
 ];
 
