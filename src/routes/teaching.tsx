@@ -128,13 +128,11 @@ function Teaching() {
               </p>
               <div className="mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-soft">
                 <div className="aspect-[16/7] w-full overflow-hidden border-b border-border bg-secondary">
-                  <img
-                    src={t.image}
-                    alt={`${t.code} — ${t.name}`}
-                    loading="lazy"
-                    width={1024}
-                    height={640}
-                    className="h-full w-full object-cover"
+                  <CourseVideo
+                    code={t.code}
+                    name={t.name}
+                    video={t.video}
+                    poster={t.poster}
                   />
                 </div>
                 <div className="p-6">
