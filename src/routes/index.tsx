@@ -23,6 +23,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const { displayed, done } = useTypewriter("Hi there! I'm Davin", 80);
+
   return (
     <section className="flex min-h-[calc(100vh-57px)] items-center md:min-h-screen">
       <div className="mx-auto grid w-full max-w-5xl items-center gap-10 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:py-24">
@@ -44,7 +46,10 @@ function Index() {
             University of Washington · CSE
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Hi there! I'm Davin
+            {displayed}
+            {!done && (
+              <span className="cursor-blink ml-0.5 inline-block h-[1em] w-[3px] bg-current align-middle" />
+            )}
           </h1>
           <p className="mt-5 max-w-sm text-base leading-relaxed text-muted-foreground">
             Graduate student at the University of Washington where my research
