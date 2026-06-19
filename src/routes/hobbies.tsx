@@ -70,18 +70,20 @@ function HobbyVideo({ name, video, poster }: { name: string; video: string; post
   return (
     <video
       ref={ref}
-      src={video}
       poster={poster}
       controls
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       onMouseEnter={play}
       onMouseLeave={pauseReset}
       aria-label={`${name} — video of one of Davin's hobbies. Hover or press play to watch.`}
-      className="h-full w-full object-cover"
-    />
+      className="h-full w-full max-w-full object-cover"
+    >
+      <source src={video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 }
 
