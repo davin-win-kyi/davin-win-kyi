@@ -1,11 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
-import cse473Video from "@/assets/teaching-cse473.mp4.asset.json";
-import cse473Poster from "@/assets/teaching-cse473-poster.jpg.asset.json";
-import cse340Video from "@/assets/teaching-cse340.mp4.asset.json";
-import cse340Poster from "@/assets/teaching-cse340-poster.jpg.asset.json";
-import cse414Video from "@/assets/teaching-cse414.mp4.asset.json";
-import cse414Poster from "@/assets/teaching-cse414-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/teaching")({
   head: () => ({
