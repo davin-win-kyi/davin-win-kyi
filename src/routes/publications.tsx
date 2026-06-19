@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import sonoImg from "@/assets/pub-sonocraftar-fig.png";
 import taskImg from "@/assets/pub-taskaudit-fig.jpg";
+import romansImg from "@/assets/pub-romans-fig.png";
 
 export const Route = createFileRoute("/publications")({
   head: () => ({
