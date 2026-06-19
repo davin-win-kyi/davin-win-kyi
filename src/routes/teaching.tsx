@@ -103,9 +103,10 @@ function Teaching() {
         Teaching
       </h1>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-        I've supported students as a teaching assistant at the University of
-        Washington across databases, interaction programming, and artificial
-        intelligence — through sections, office hours, and course materials.
+        I've supported hundreds of students as a teaching assistant at the
+        University of Washington across databases, interaction programming, and
+        artificial intelligence — through sections, office hours, and course
+        materials.
       </p>
 
       <div className="relative mt-14 pl-8">
