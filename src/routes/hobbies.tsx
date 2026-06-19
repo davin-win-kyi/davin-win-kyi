@@ -1,13 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
-import snowboardingVideo from "@/assets/snowboarding.mp4.asset.json";
-import snowboardingPoster from "@/assets/snowboarding-poster.jpg.asset.json";
-import runningVideo from "@/assets/running.mp4.asset.json";
-import runningPoster from "@/assets/running-poster.jpg.asset.json";
-import liftingVideo from "@/assets/lifting.mp4.asset.json";
-import liftingPoster from "@/assets/lifting-poster.jpg.asset.json";
-import boxingVideo from "@/assets/boxing.mp4.asset.json";
-import boxingPoster from "@/assets/boxing-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/hobbies")({
   head: () => ({
