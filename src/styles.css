@@ -189,8 +189,18 @@
     float-soft 6s ease-in-out infinite;
 }
 
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink-cursor 1s step-end infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .blob-animated {
+  .blob-animated,
+  .cursor-blink {
     animation: none;
   }
 }

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, FileText, GraduationCap, Github, Linkedin } from "lucide-react";
 import profilePhoto from "@/assets/home-portrait.png";
 import { RESUME_URL } from "@/lib/links";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
 
 export const Route = createFileRoute("/")({
