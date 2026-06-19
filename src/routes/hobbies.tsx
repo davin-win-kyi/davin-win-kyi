@@ -1,13 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
-import snowboardingVideo from "@/assets/snowboarding.mp4.asset.json";
-import snowboardingPoster from "@/assets/snowboarding-poster.jpg.asset.json";
-import runningVideo from "@/assets/running.mp4.asset.json";
-import runningPoster from "@/assets/running-poster.jpg.asset.json";
-import liftingVideo from "@/assets/lifting.mp4.asset.json";
-import liftingPoster from "@/assets/lifting-poster.jpg.asset.json";
-import boxingVideo from "@/assets/boxing.mp4.asset.json";
-import boxingPoster from "@/assets/boxing-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/hobbies")({
   head: () => ({
@@ -38,26 +30,26 @@ type Hobby = {
 const hobbies: Hobby[] = [
   {
     name: "Snowboarding",
-    video: snowboardingVideo.url,
-    poster: snowboardingPoster.url,
+    video: "/media/snowboarding.mp4",
+    poster: "/media/snowboarding-poster.jpg",
     blurb: "Carving down the mountain whenever the season allows.",
   },
   {
     name: "Boxing",
-    video: boxingVideo.url,
-    poster: boxingPoster.url,
+    video: "/media/boxing.mp4",
+    poster: "/media/boxing-poster.jpg",
     blurb: "Footwork, conditioning, and the focus that comes with sparring.",
   },
   {
     name: "Running",
-    video: runningVideo.url,
-    poster: runningPoster.url,
+    video: "/media/running.mp4",
+    poster: "/media/running-poster.jpg",
     blurb: "Logging miles around the neighborhood to clear my head.",
   },
   {
     name: "Lifting",
-    video: liftingVideo.url,
-    poster: liftingPoster.url,
+    video: "/media/lifting.mp4",
+    poster: "/media/lifting-poster.jpg",
     blurb: "Chasing progressive overload and steady strength gains in the gym.",
   },
 ];
@@ -78,18 +70,20 @@ function HobbyVideo({ name, video, poster }: { name: string; video: string; post
   return (
     <video
       ref={ref}
-      src={video}
       poster={poster}
       controls
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       onMouseEnter={play}
       onMouseLeave={pauseReset}
       aria-label={`${name} — video of one of Davin's hobbies. Hover or press play to watch.`}
-      className="h-full w-full object-cover"
-    />
+      className="h-full w-full max-w-full object-cover"
+    >
+      <source src={video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 }
 

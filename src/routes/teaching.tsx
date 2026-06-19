@@ -1,11 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useRef } from "react";
-import cse473Video from "@/assets/teaching-cse473.mp4.asset.json";
-import cse473Poster from "@/assets/teaching-cse473-poster.jpg.asset.json";
-import cse340Video from "@/assets/teaching-cse340.mp4.asset.json";
-import cse340Poster from "@/assets/teaching-cse340-poster.jpg.asset.json";
-import cse414Video from "@/assets/teaching-cse414.mp4.asset.json";
-import cse414Poster from "@/assets/teaching-cse414-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/teaching")({
   head: () => ({
@@ -40,24 +34,24 @@ const timeline: Course[] = [
     code: "CSE 473",
     name: "Introduction to Artificial Intelligence",
     role: "Teaching Assistant",
-    video: cse473Video.url,
-    poster: cse473Poster.url,
+    video: "/media/teaching-cse473.mp4",
+    poster: "/media/teaching-cse473-poster.jpg",
   },
   {
     year: "2023",
     code: "CSE 340",
     name: "Interaction Programming",
     role: "Teaching Assistant",
-    video: cse340Video.url,
-    poster: cse340Poster.url,
+    video: "/media/teaching-cse340.mp4",
+    poster: "/media/teaching-cse340-poster.jpg",
   },
   {
     year: "2022",
     code: "CSE 414",
     name: "Introduction to Database Systems",
     role: "Teaching Assistant",
-    video: cse414Video.url,
-    poster: cse414Poster.url,
+    video: "/media/teaching-cse414.mp4",
+    poster: "/media/teaching-cse414-poster.jpg",
   },
 ];
 
@@ -85,18 +79,20 @@ function CourseVideo({
   return (
     <video
       ref={ref}
-      src={video}
       poster={poster}
       controls
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       onMouseEnter={play}
       onMouseLeave={pauseVideo}
       aria-label={`${code} — ${name}. Hover or press play to watch.`}
-      className="h-full w-full object-cover"
-    />
+      className="h-full w-full max-w-full object-cover"
+    >
+      <source src={video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 }
 
