@@ -32,25 +32,25 @@ const hobbies: Hobby[] = [
     name: "Snowboarding",
     video: "/media/snowboarding.mp4",
     poster: "/media/snowboarding-poster.jpg",
-    blurb: "Carving down the mountain whenever the season allows.",
+    blurb: "Carving down mountains, enjoying the chill and sleek breeze.",
   },
   {
     name: "Boxing",
     video: "/media/boxing.mp4",
     poster: "/media/boxing-poster.jpg",
-    blurb: "Footwork, conditioning, and the focus that comes with sparring.",
+    blurb: "It's sure as heck more technical than I thought, aha.",
   },
   {
     name: "Running",
     video: "/media/running.mp4",
     poster: "/media/running-poster.jpg",
-    blurb: "Logging miles around the neighborhood to clear my head.",
+    blurb: "Running down scenic neighborhoods like Mercer Island, Cambridge, and Somerset sure help me get out of the grind.",
   },
   {
     name: "Lifting",
     video: "/media/lifting.mp4",
     poster: "/media/lifting-poster.jpg",
-    blurb: "Chasing progressive overload and steady strength gains in the gym.",
+    blurb: "Pushing to new limits gives me the motivation to continually grow and help others with their gains as well.",
   },
 ];
 
